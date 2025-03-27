@@ -12,4 +12,12 @@ df_Svenska = pd.read_excel('visualiseringar/riket2023_åk9_np.xlsx',skiprows=8, 
 df_Svenska_som_andraspråk = pd.read_excel('visualiseringar/riket2023_åk9_np.xlsx',skiprows=8, sheet_name="Svenska som andraspråk")
 
 
+#Ändrar kolumnamnen så att det ser ut som det gör enligt instruktionerna.
+columnname = ["Plats", "Huvudman", "Totalt (A-F)", "Flickor (A-F)", "Pojkar (A-F)",
+           "Totalt (A-E)", "Flickor (A-E)", "Pojkar (A-E)", "Totalt (poäng)", "Flickor (poäng)", "Pojkar (poäng)"]
+
+df_Engelska.columns = columnname
+df_Matematik.columns = columnname
+df_Svenska.columns = columnname
+df_Svenska_som_andraspråk.columns = columnname
 
