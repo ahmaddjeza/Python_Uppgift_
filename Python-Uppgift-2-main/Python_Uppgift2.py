@@ -33,3 +33,43 @@ convert_to_numeric(df_Matematik, "Totalt (poäng)")
 convert_to_numeric(df_Svenska, "Totalt (poäng)")
 convert_to_numeric(df_Svenska_som_andraspråk, "Totalt (poäng)")
 
+# Skapa en 2x2 subplot för att visa alla fyra diagram
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+
+# Första diagrammet - Engelska
+axes[0, 1].bar(df_Engelska["Huvudman"], df_Engelska["Totalt (poäng)"], color="yellow")
+axes[0, 1].set_title("Engelska - Totalt Poäng")
+axes[0, 1].set_xlabel("Huvudman")
+axes[0, 1].set_ylabel("Poäng")
+axes[0, 1].set_xticklabels(df_Engelska["Huvudman"], rotation=45)
+
+# Andra diagrammet - Matematik
+axes[1, 0].bar(df_Matematik["Huvudman"], df_Matematik["Totalt (poäng)"], color="green")
+axes[1, 0].set_title("Matematik - Totalt Poäng")
+axes[1, 0].set_xlabel("Huvudman")
+axes[1, 0].set_ylabel("Poäng")
+axes[1, 0].set_xticklabels(df_Matematik["Huvudman"], rotation=45)
+
+# Tredje diagrammet - Svenska
+axes[0, 0].bar(df_Svenska["Huvudman"], df_Svenska["Totalt (poäng)"], color="blue")
+axes[0, 0].set_title("Svenska - Totalt Poäng")
+axes[0, 0].set_xlabel("Huvudman")
+axes[0, 0].set_ylabel("Poäng")
+axes[0, 0].set_xticklabels(df_Svenska["Huvudman"], rotation=45)
+
+# Fjärde diagrammet - Svenska som andraspråk
+axes[1, 1].bar(df_Svenska_som_andraspråk["Huvudman"], df_Svenska_som_andraspråk["Totalt (poäng)"], color="red")
+axes[1, 1].set_title("Svenska som andraspråk - Totalt Poäng")
+axes[1, 1].set_xlabel("Huvudman")
+axes[1, 1].set_ylabel("Poäng")
+axes[1, 1].set_xticklabels(df_Svenska_som_andraspråk["Huvudman"], rotation=45)
+
+# Justera layouten så att diagrammen inte överlappar varandra
+plt.tight_layout()
+
+# Spara bilden
+plt.savefig("visualiseringar/np_totalt_poäng.png")
+
+# Visa bilden
+plt.show()
+
