@@ -83,3 +83,8 @@ plt.show()
 #Läser in datan från Excelfilen.
 df_betyg_och_prov = pd.read_excel("visualiseringar\\betyg_o_prov_riksnivå.xlsx", sheet_name="Tabell 1B", skiprows=7)
 
+# Sätter nya kolumnnamn
+kolumner = ["Läsår", "Meritvärde Totalt", "Meritvärde Flickor", "Meritvärde Pojkar", "Totalt", "Flickor", "Pojkar", "Ej Godkänt Totalt", "Ej Godkänt Flickor", "Ej Godkänt Pojkar"]
+df_betyg_och_prov.columns = kolumner
+
+
