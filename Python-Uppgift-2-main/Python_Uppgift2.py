@@ -93,3 +93,12 @@ df_ej_godkänt = df_betyg_och_prov[["Läsår", "Ej Godkänt Totalt", "Ej Godkän
 # Tar bara med de senaste 5 åren
 df_ej_godkänt = df_ej_godkänt.head(5)
 
+# Skapar linjediagram
+fig = px.line(df_ej_godkänt, x="Läsår", y=["Ej Godkänt Totalt", "Ej Godkänt Flickor", "Ej Godkänt Pojkar"],
+              title="Andel elever utan godkänt betyg i minst ett ämne (Läsår 18-23)",
+              markers=True)
+
+# Sparar och visar diagrammet
+fig.write_html("visualiseringar/graf_elever_utan_godkänt.html")
+fig.show()
+
