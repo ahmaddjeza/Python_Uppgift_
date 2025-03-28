@@ -102,3 +102,19 @@ fig = px.line(df_ej_godkänt, x="Läsår", y=["Ej Godkänt Totalt", "Ej Godkänt
 fig.write_html("visualiseringar/graf_elever_utan_godkänt.html")
 fig.show()
 
+
+#b) Rita ett linjediagram för meritvärde för 16 ämnen för totalt, flickor och pojkar för läsår 18-23.
+
+df_meritvärde = df_betyg_och_prov[["Läsår", "Meritvärde Totalt", "Meritvärde Flickor", "Meritvärde Pojkar"]]
+
+# Tar bara med de senaste 5 åren
+df_meritvärde = df_meritvärde.head(5)
+
+# Skapar linjediagram för meritvärde
+fig = px.line(df_meritvärde, x="Läsår", y=["Meritvärde Totalt", "Meritvärde Flickor", "Meritvärde Pojkar"],
+              title="Meritvärde för 16 ämnen (Läsår 18-23)",
+              markers=True)
+
+# Sparar och visar diagrammet
+fig.write_html("visualiseringar/graf_meritvärde.html")
+fig.show()
