@@ -73,3 +73,13 @@ plt.savefig("visualiseringar/np_totalt_poäng.png")
 # Visa bilden
 plt.show()
 
+#Uppgift 2
+#I uppgifterna nedan ska du använda dig av datasetet betyg_o_prov_riksnivå.xlsx. Använd Plotly för att rita diagrammen
+#nedan för de uppgifter som kräver diagram. Använd Pandas för att svara på frågor om datasetet.
+
+#a) Rita ett linjediagram för andel elever som saknar godkänt betyg i ett eller fler ämnen för läsår 18-23. Ta med totalt,
+#flickor och pojkar i samma graf.
+
+#Läser in datan från Excelfilen.
+df_betyg_och_prov = pd.read_excel("visualiseringar\\betyg_o_prov_riksnivå.xlsx", sheet_name="Tabell 1B", skiprows=7)
+
