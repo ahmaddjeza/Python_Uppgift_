@@ -87,4 +87,9 @@ df_betyg_och_prov = pd.read_excel("visualiseringar\\betyg_o_prov_riksnivå.xlsx"
 kolumner = ["Läsår", "Meritvärde Totalt", "Meritvärde Flickor", "Meritvärde Pojkar", "Totalt", "Flickor", "Pojkar", "Ej Godkänt Totalt", "Ej Godkänt Flickor", "Ej Godkänt Pojkar"]
 df_betyg_och_prov.columns = kolumner
 
+# Väljer bara de kolumner vi behöver
+df_ej_godkänt = df_betyg_och_prov[["Läsår", "Ej Godkänt Totalt", "Ej Godkänt Flickor", "Ej Godkänt Pojkar"]]
+
+# Tar bara med de senaste 5 åren
+df_ej_godkänt = df_ej_godkänt.head(5)
 
